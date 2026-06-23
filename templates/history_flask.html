@@ -1,0 +1,64 @@
+{% extends "base_flask.html" %}
+{% block content %}
+<div class="Request-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="abouttitle">
+                    <h2>Prediction History</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Request">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>SPX</th>
+                                <th>USO</th>
+                                <th>SLV</th>
+                                <th>EUR/USD</th>
+                                <th>USD/INR</th>
+                                <th>IR %</th>
+                                <th>CPI %</th>
+                                <th>Gold (USD)</th>
+                                <th>Gold (INR/10g)</th>
+                                <th>Timestamp</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in rows %}
+                            <tr>
+                                <td>{{ row[0] }}</td>
+                                <td>{{ "%.2f"|format(row[1]) }}</td>
+                                <td>{{ "%.2f"|format(row[2]) }}</td>
+                                <td>{{ "%.2f"|format(row[3]) }}</td>
+                                <td>{{ "%.2f"|format(row[4]) }}</td>
+                                <td>{{ "%.2f"|format(row[5]) }}</td>
+                                <td>{{ "%.2f"|format(row[6]) }}</td>
+                                <td>{{ "%.2f"|format(row[7]) }}</td>
+                                <td style="font-weight: bold; color: #d4af37;">{{ "%.2f"|format(row[8]) }}</td>
+                                <td style="font-weight: bold; color: #28a745;">₹{{ row[10] }}</td>
+                                <td>{{ row[9] }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% if not rows %}
+                <p>No predictions found in history.</p>
+                {% endif %}
+                <div class="button_section">
+                    <a class="main_bt" href="/predict">Make New Prediction</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

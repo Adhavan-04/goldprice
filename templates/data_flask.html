@@ -1,0 +1,60 @@
+{% extends "base_flask.html" %}
+{% block content %}
+<div class="Request-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="abouttitle">
+                    <h2>Predict</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Request">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titlepage3">
+                    <h2>Enter Factors for Prediction</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <form method="post" action="/predict">
+                    <div class="form-group">
+                        <input class="form-control" placeholder="SPX (Stock Market Index)" name="spx" type="number"
+                            step="any" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="USO (Crude Oil)" name="uso" type="number" step="any"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="SLV (Silver)" name="slv" type="number" step="any"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="EUR/USD (Exchange Rate)" name="eur" type="number"
+                            step="any" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="USD/INR (Current Rate, e.g. 94.8)" name="usd_inr"
+                            type="number" step="any" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="US Interest Rate (%, e.g. 3.5)" name="ir" type="number"
+                            step="any" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Inflation CPI (%, e.g. 2.4)" name="cpi" type="number"
+                            step="any" required>
+                    </div>
+                    <button class="send-btn" type="submit">Predict Gold Price</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

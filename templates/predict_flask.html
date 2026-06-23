@@ -1,0 +1,49 @@
+{% extends "base_flask.html" %}
+{% block content %}
+<div class="Request-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="abouttitle">
+                    <h2>Prediction Result</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Request">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titlepage3">
+                    <h2>Resulting Gold Price</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Predicted GLD ETF Price: <span
+                                style="color: #d4af37; font-weight: bold;">${{
+                                price_usd }}</span></h3>
+                        <h3 class="card-title">Approx. INR Price (per 10g 24K): <span
+                                style="color: #28a745; font-weight: bold;">₹{{
+                                price_inr }}</span></h3>
+                        <p class="card-text">
+                            <strong>Input Factors:</strong><br>
+                            SPX: {{ spx }} | USO: {{ uso }} | SLV: {{ slv }} | EUR/USD: {{ eur }}<br>
+                            USD/INR: {{ usd_inr }} | Interest: {{ ir }}% | CPI: {{ cpi }}%
+                        </p>
+                        <hr>
+                        <div class="button_section">
+                            <a class="main_bt" href="/predict">Predict Again</a>
+                            <a class="main_bt" href="/history">View History</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

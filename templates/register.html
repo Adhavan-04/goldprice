@@ -1,0 +1,52 @@
+{% extends "nav.html" %}
+{% block content %}
+{% load static %}
+
+<div class="Request-bg">
+    <div class="container">
+      <div class="row">
+         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+          <div class="abouttitle">
+           <h2>Register</h2>
+         </div>
+         </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  <div class="Request">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="titlepage3">
+            <h2>Create an account</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+          <form method="post">
+            {% csrf_token %}
+            <input class="form-control" placeholder="First Name" name="fname" type="text">
+            <input class="form-control" placeholder="Last Name" name="lname" type="text">
+            <input class="form-control" placeholder="User Name" name="uname" type="text">
+
+            
+            <input class="form-control" placeholder="Email" name="email" type="email">
+            <input class="form-control" placeholder="Password" name="psw" type="password">
+            <input class="form-control" placeholder="Confirm Password" name="psw1" type="password">
+            <button class="send-btn" type="submit">Register</button> 
+        </form>
+        </div>
+       
+
+
+
+  
+  
+
+
+{% endblock %}

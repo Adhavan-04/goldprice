@@ -1,0 +1,52 @@
+{% extends "nav.html" %}
+{% block content %}
+{% load static %}
+
+<div class="Request-bg">
+    <div class="container">
+      <div class="row">
+         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+          <div class="abouttitle">
+           <h2>Register</h2>
+         </div>
+         </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  <div class="Request">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="titlepage3">
+            <h2>Predict Gold Price</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+          <form method="post">
+            {% csrf_token %}
+            <input class="form-control" placeholder="SPX:{{spx}}" name="spx" type="text">
+            <input class="form-control" placeholder="USO:{{uso}}" name="uso" type="text">
+            <input class="form-control" placeholder="SLV:{{slv}}" name="slv" type="text">
+            <input class="form-control" placeholder="EUR/USD:{{eur}}" name="eur" type="text">
+            <input class="form-control" placeholder="Prediction Price:{{price}}" name="eur" type="text">
+
+            
+           
+            <button class="send-btn" type="submit">Predict</button> 
+        </form>
+        </div>
+       
+
+
+
+  
+  
+
+
+{% endblock %}
